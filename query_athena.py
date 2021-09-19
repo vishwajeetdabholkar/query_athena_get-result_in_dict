@@ -9,7 +9,7 @@ def query_athena(query):
     output = 's3_location_for_storing_query_results'
     RETRY_COUNT = 10
     res = []
-    
+    query = 'select * from tmp_db.tmp_tbl limit 10;'
     response = client.start_query_execution(
             QueryString=query,
             QueryExecutionContext={
